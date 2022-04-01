@@ -1,6 +1,10 @@
+import java.util.Scanner;
+import java.io.IOException;
+
 public class Game {
 
     static boolean[][] board = new boolean[7][6];
+
 
     public static void displayBoard() {
         for (int i = 0; i < 6; i++) {
@@ -34,9 +38,27 @@ public class Game {
         addTokenToCell(x, 5);
     }
 
-
     public static void main(String[] arg) {
         Game game = new Game();
+        game.start();
+    }
+
+    private static void clearScreen() {
+        for (int i = 0; i < 50; ++i) System.out.println();
+    }
+
+    public void start() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println();
+        System.out.println("GAME STARTED!");
+        System.out.println();
+        displayBoard();
+        System.out.println("Enter the row (0-6): ");
+        int x = sc.nextInt();
+        clearScreen();
+        displayBoard();
 
     }
+
+
 }
